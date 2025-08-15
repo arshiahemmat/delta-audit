@@ -1,0 +1,13 @@
+[build-system]
+requires=['setuptools>=68','wheel']
+build-backend='setuptools.build_meta'
+
+[project]
+name='delta-audit'
+version='0.1.0'
+description='A lightweight Δ-Attribution suite for auditing model updates.'
+requires-python='>=3.9'
+dependencies=['numpy','pandas','scikit-learn','matplotlib','scipy','joblib','pyyaml']
+
+[project.scripts]
+delta-audit='delta_audit.cli:main'
