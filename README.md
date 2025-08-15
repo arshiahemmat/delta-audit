@@ -50,7 +50,7 @@ delta-audit/
 │   ├── code/                 # Original scripts (for reproducibility)
 │   └── results/              # Results and figures
 ├── paper/                    # Research paper
-│   └── ICCKE_delta.pdf       # Camera-ready paper
+│   └── ICCKE_delta.pdf       # Submitted paper
 ├── docs/                     # Documentation website
 └── .github/                  # GitHub workflows and templates
 ```
@@ -116,7 +116,7 @@ See the [documentation website](https://arshiahemmat.github.io/delta-audit) for 
 
 ## Citation
 
-If you use Delta-Audit in your research, please cite:
+If you use Delta-Audit in your research, please cite (Will be available soon!):
 
 ```bibtex
 @article{hemmat2025delta,
