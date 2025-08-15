@@ -1,1 +1,73 @@
-name: full_benchmark
+# Full benchmark configuration for Delta-Audit
+# This runs all 45 experiments (5 algorithms × 3 pairs × 3 datasets)
+
+datasets:
+  - breast_cancer
+  - wine
+  - digits
+
+algo_pairs:
+  logreg:
+    - A: {C: 1.0, penalty: l2, solver: lbfgs}
+      B: {C: 0.1, penalty: l2, solver: lbfgs}
+      pair_name: pair1
+    - A: {C: 1.0, penalty: l2, solver: liblinear}
+      B: {C: 1.0, penalty: l1, solver: liblinear}
+      pair_name: pair2
+    - A: {C: 1.0, penalty: l2, solver: lbfgs}
+      B: {C: 1.0, penalty: l2, solver: saga}
+      pair_name: pair3
+  
+  svc:
+    - A: {C: 1.0, kernel: rbf, gamma: scale}
+      B: {C: 1.0, kernel: linear, gamma: scale}
+      pair_name: pair1
+    - A: {C: 1.0, kernel: rbf, gamma: scale}
+      B: {C: 1.0, kernel: rbf, gamma: auto}
+      pair_name: pair2
+    - A: {C: 1.0, kernel: poly, degree: 3, gamma: scale}
+      B: {C: 1.0, kernel: rbf, gamma: scale}
+      pair_name: pair3
+  
+  rf:
+    - A: {n_estimators: 100, max_depth: null, max_features: null}
+      B: {n_estimators: 300, max_depth: null, max_features: null}
+      pair_name: pair1
+    - A: {n_estimators: 200, max_depth: null, max_features: null}
+      B: {n_estimators: 200, max_depth: 5, max_features: null}
+      pair_name: pair2
+    - A: {n_estimators: 200, max_depth: null, max_features: sqrt}
+      B: {n_estimators: 200, max_depth: null, max_features: log2}
+      pair_name: pair3
+  
+  gb:
+    - A: {n_estimators: 150, learning_rate: 0.1, max_depth: 3}
+      B: {n_estimators: 150, learning_rate: 0.05, max_depth: 3}
+      pair_name: pair1
+    - A: {n_estimators: 100, learning_rate: 0.1, max_depth: 3}
+      B: {n_estimators: 200, learning_rate: 0.1, max_depth: 3}
+      pair_name: pair2
+    - A: {n_estimators: 150, learning_rate: 0.1, max_depth: 3}
+      B: {n_estimators: 150, learning_rate: 0.1, max_depth: 5}
+      pair_name: pair3
+  
+  knn:
+    - A: {n_neighbors: 5, weights: uniform, algorithm: auto}
+      B: {n_neighbors: 10, weights: uniform, algorithm: auto}
+      pair_name: pair1
+    - A: {n_neighbors: 5, weights: uniform, algorithm: auto}
+      B: {n_neighbors: 5, weights: distance, algorithm: auto}
+      pair_name: pair2
+    - A: {n_neighbors: 5, weights: uniform, algorithm: auto}
+      B: {n_neighbors: 5, weights: uniform, algorithm: ball_tree}
+      pair_name: pair3
+
+experiment_settings:
+  test_size: 0.2
+  random_state: 42
+  baseline_method: mean
+
+output_settings:
+  save_individual_results: true
+  save_summary: true
+  create_manifest: true 

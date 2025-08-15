@@ -1,8 +1,19 @@
 cff-version: 1.2.0
-title: Delta-Audit: Explaining What Changes When Models Change
+message: "If you use this software, please cite it as below."
 authors:
-  - family-names: Hemmat
-    given-names: Arshia
+  - family-names: "Hemmat"
+    given-names: "Arshia"
+title: "Delta-Audit: Explaining What Changes When Models Change"
 version: 0.1.0
-date-released: 2025-08-15
+doi: 10.5281/zenodo.1234567
+date-released: 2025-01-15
+url: "https://github.com/arshiahemmat/delta-audit"
+repository-code: "https://github.com/arshiahemmat/delta-audit"
 license: MIT
+keywords:
+  - "machine learning"
+  - "explainable AI"
+  - "model interpretability"
+  - "attribution methods"
+  - "model auditing"
+  - "delta attribution" 

@@ -1,1 +1,21 @@
-name: quickstart
+# Quickstart configuration for Delta-Audit
+# This runs a small subset of experiments for demonstration
+
+datasets:
+  - wine
+
+algo_pairs:
+  logreg:
+    - A: {C: 1.0, penalty: l2, solver: lbfgs}
+      B: {C: 0.1, penalty: l2, solver: lbfgs}
+      pair_name: pair1
+
+experiment_settings:
+  test_size: 0.2
+  random_state: 42
+  baseline_method: mean
+
+output_settings:
+  save_individual_results: true
+  save_summary: true
+  create_manifest: true 
