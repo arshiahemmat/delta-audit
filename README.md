@@ -50,7 +50,7 @@ delta-audit/
 │   ├── code/                 # Original scripts (for reproducibility)
 │   └── results/              # Results and figures
 ├── paper/                    # Research paper
-│   └── ICCKE_delta.pdf       # Submitted paper
+│   └── ICCKE_delta.pdf       # NOT AVAILABLE NOW!
 ├── docs/                     # Documentation website
 └── .github/                  # GitHub workflows and templates
 ```
